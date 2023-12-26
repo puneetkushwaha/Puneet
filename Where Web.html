@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
+
+
+
+  
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+
+  <title>CodePen - Crossing on scroll</title>
+
+    <link rel="canonical" href="https://codepen.io/alvarotrigo/pen/eYEqPza">
+  
+  
+  
+  
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
+body{
+    font-family: 'Montserrat', sans-serif;
+  background:ivory;
+  width:100%;
+  height:100%;
+  padding:0;
+  margin:0;
+  overflow-x:hidden;
+}
+#text{
+  text-align:center;
+  position:relative;
+  top:200px;
+  font-size:7em;
+  
+}
+.text0,.text2{
+    color: black;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+.text1,.text3{
+    color: black;
+  -webkit-text-fill-color: #bc0000; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+#dummy{
+  position:relative;
+  height:100vh;
+  width:100%;
+}
+#back{
+  position:relative;
+ padding-top:50%;
+  text-align:center;
+ font-size:1.5em;
+  cursor:pointer;
+}
+
+
+@media only screen and (max-width: 600px) {
+  #back{
+    cursor:none;
+    font-size:0.8em;
+  }
+  #text{
+        top:70px;
+    font-size:2.25em;
+  }
+
+}
+</style>
+
+  
+  
+  
+</head>
+
+<body translate="no">
+  <body>
+  <div id="text" class="text0">WHERE?</div>
+    <div id="text" class="text1">WHERE?</div>
+    <div id="text" class="text2">WHERE?</div>
+    <div id="text" class="text3">WHERE?</div>
+  
+  
+  
+  <div id="dummy">
+    <div id="back">BNGI Presents FRESHBASH</div>
+  </div>
+  <body>
+  <script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
+<script src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'></script>
+<script src='https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js'></script>
+      <script id="rendered-js" >
+gsap.to('.text0', {
+  x: '20%', rotate: 10, duration: 0.85, scrollTrigger: {
+    trigger: '.text0',
+    scrub: true,
+    start: 'top 20%' } });
+
+
+gsap.to('.text2', {
+  x: '20%', rotate: 10, duration: 0.85, scrollTrigger: {
+    trigger: '.text2',
+    scrub: true,
+    start: 'top 40%' } });
+
+
+gsap.to('.text1', {
+  x: '-20%', rotate: -10, duration: 0.85, scrollTrigger: {
+    trigger: '.text1',
+    scrub: true,
+    start: 'top 30%' } });
+
+
+gsap.to('.text3', {
+  x: '-20%', rotate: -10, duration: 0.85, scrollTrigger: {
+    trigger: '.text3',
+    scrub: true,
+    start: 'top 40%' } });
+
+
+document.querySelector('#back').addEventListener('click', () => {
+  gsap.to(window, { duration: 1, scrollTo: 'body' });
+
+});
+//# sourceURL=pen.js
+    </script>
+
+  
+  <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js"></script>
+</body>
+
+</html>
